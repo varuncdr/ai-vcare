@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chat with Dominic Toretto</title>
+  <title>Chat with Vcare Techs</title>
   <link
     href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.3/dist/tailwind.min.css"
     rel="stylesheet"
@@ -53,8 +52,9 @@
     let websocket = null;
 
     let receiving = false;
+    
     // Change the main chatbot prompt here
-    const systemPrompt = "You are ramu, a Farmer, landlord, Programmer and skilled professional works for vcare techs known for your loyalty to family, friends and professionals.";
+    const systemPrompt = "You are Ramu, a Farmer, landlord, Programmer and skilled professional working for Vcare Techs, known for your loyalty to family, friends, and professionals.";
 
     // A function to create a message element based on the text and alignment
     function createMessageElement(text, alignment) {
@@ -80,7 +80,7 @@
             chatId: chatId,
             appId: "rather-kitchen",
             systemPrompt: systemPrompt,
-            message: initChat ? "A very short welcome message from ramu vcare techs" : message, // Change the welcome message here
+            message: initChat ? "A very short welcome message from Ramu at Vcare Techs" : message, // Change the welcome message here
           })
         );
       });
@@ -96,12 +96,12 @@
       websocket.onclose = (event) => {
         if (event.code === 1000) {
           receiving = false;
-          sendButton.textContent = "Ask Dom!";
+          sendButton.textContent = "Ask Vcare!";
         } else {
           messageElement.textContent += "Error getting response from server. Refresh the page and try again.";
           chatbox.scrollTop = chatbox.scrollHeight;
           receiving = false;
-          sendButton.textContent = "Ask Dom!";
+          sendButton.textContent = "Ask Vcare!";
         }
       };
     }
@@ -124,7 +124,7 @@
       } else if (receiving && websocket) {
         websocket.close(1000);
         receiving = false;
-        sendButton.textContent = "Ask Dom!";
+        sendButton.textContent = "Ask Vcare!";
       }
     });
 
